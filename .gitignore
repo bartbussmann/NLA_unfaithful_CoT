@@ -1,0 +1,18 @@
+# Cloned support repos (re-clone per README)
+chainscope/
+nla/
+
+# Experiment outputs
+exp/
+*.jsonl
+*.parquet
+
+# Caches
+__pycache__/
+*.pyc
+.venv/
+hf_cache/
+
+# Editor
+.vscode/
+.idea/

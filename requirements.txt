@@ -1,0 +1,19 @@
+# NLA-CoT pipeline dependencies.
+# torch must match your CUDA driver. We pin the cu128 build for the cluster's
+# driver (12.8); change the +cu128 suffix if your driver differs.
+torch==2.11.0+cu128 ; sys_platform == "linux"
+transformers==5.9.0
+safetensors==0.7.0
+huggingface-hub>=1.16.0
+pyarrow>=24.0.0
+pyyaml>=6.0.3
+numpy>=2.4.0
+orjson==3.11.9
+httpx==0.28.1
+matplotlib==3.10.9
+scikit-learn==1.8.0
+# Install command (cluster):
+#   uv pip install --python <venv>/bin/python \
+#       --index-url https://download.pytorch.org/whl/cu128 \
+#       --extra-index-url https://pypi.org/simple \
+#       -r requirements.txt
