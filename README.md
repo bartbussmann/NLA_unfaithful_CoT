@@ -68,21 +68,6 @@ uv pip install --python .venv/bin/python \
 source .venv/bin/activate
 ```
 
-`cu128` matches the cluster's NVIDIA driver (12.8). On a different driver,
-swap the suffix in `requirements.txt` and the `--index-url`. The HF
-checkpoints (`Qwen/Qwen2.5-7B-Instruct`, `kitft/nla-qwen2.5-7b-L20-av`,
-`sentence-transformers/all-MiniLM-L6-v2`) download automatically on first
-use.
-
-### 3. (Optional) Point caches at fast shared storage
-
-```bash
-export HF_HOME=/path/to/shared/hf_cache
-```
-
-The cluster CLAUDE.md notes that without this, downloads land on
-node-local disk and fill it.
-
 ## Running
 
 Each Slurm job below writes its outputs under `exp/iphr/` (created on
